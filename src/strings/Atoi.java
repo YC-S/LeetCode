@@ -53,38 +53,40 @@ package strings;
 public class Atoi {
 
   public static int myAtoi(String str) {
-    if (str == null || str.length() == 0) {
+    if (str == null) {
       return 0;
     }
-    int res = 0;
-    boolean negative = false;
     str = str.trim();
-    if (str.startsWith("[^1-9]")) {
+    if (str.length() == 0) {
       return 0;
     }
+    int index = 0;
+    int sign = 1;
+    int total = 0;
 
-    int i = 0;
-    if (str.charAt(i) == '-') {
-      negative = true;
-      i++;
+    // 2. Handle signs
+    if (str.charAt(index) == '+' || str.charAt(index) == '-') {
+      sign = str.charAt(index) == '+' ? 1 : -1;
+      index++;
     }
 
-    char[] array = str.toCharArray();
-    while (i < str.length() && (str.charAt(i) - '0') >= 0 && str.charAt(i) - '0' <= 9) {
-      int tmp = array[i] - ('0');
-      if (negative
-        && ((res > Integer.MAX_VALUE / 10) || (res == Integer.MAX_VALUE / 10 && tmp > 8))) {
-        return 0;
-      } else if (!negative
-        && ((res > Integer.MAX_VALUE / 10) || (res == Integer.MAX_VALUE / 10 && tmp > 7))) {
-        return 0;
-      } else {
-        res *= 10;
-        res += tmp;
+    // 3. Convert number and avoid overflow
+    while (index < str.length()) {
+      int digit = str.charAt(index) - '0';
+      if (digit < 0 || digit > 9) {
+        break;
       }
-      i++;
+
+      // check if total will be overflow after 10 times and add digit
+      if (Integer.MAX_VALUE / 10 < total
+        || Integer.MAX_VALUE / 10 == total && Integer.MAX_VALUE % 10 < digit) {
+        return sign == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+      }
+
+      total = 10 * total + digit;
+      index++;
     }
-    return negative ? res * (-1) : res;
+    return total * sign;
   }
 
   public static void main(String[] args) {
