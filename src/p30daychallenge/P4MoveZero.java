@@ -1,8 +1,11 @@
-package _30DayChallenge;
+package p30daychallenge;
 
 import java.util.Arrays;
 
-public class _4_MoveZero {
+/**
+ * @author shiyuanchen
+ */
+public class P4MoveZero {
 
 	public static void moveZeros(int[] nums) {
 		if (nums == null || nums.length == 0) {
