@@ -6,7 +6,7 @@ import java.util.PriorityQueue;
 /**
  * @author shiyuanchen
  */
-public class P12_LastStoneWeight {
+public class P12LastStoneWeight {
 	public static int lastStoneWeight(int[] stones) {
 		PriorityQueue<Integer> heap = new PriorityQueue<>(Comparator.reverseOrder());
 		for (int stone : stones) {

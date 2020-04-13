@@ -3,7 +3,7 @@ package p30daychallenge;
 /**
  * @author shiyuanchen
  */
-public class P9_Backspace_String_Compare {
+public class P9BackspaceStringCompare {
 	public static boolean backspaceCompare(String S, String T) {
 		String s = helper(S);
 		String t = helper(T);

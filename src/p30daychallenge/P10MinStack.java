@@ -6,14 +6,14 @@ import java.util.Deque;
 /**
  * @author shiyuanchen
  */
-public class P10_MinStack {
+public class P10MinStack {
 	private final Deque<Integer> stack;
 	private final Deque<Integer> minStack;
 
 	/**
 	 * initialize your data structure here.
 	 */
-	public P10_MinStack() {
+	public P10MinStack() {
 		stack = new ArrayDeque<>();
 		minStack = new ArrayDeque<>();
 	}

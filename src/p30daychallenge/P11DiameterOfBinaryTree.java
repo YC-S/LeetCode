@@ -14,7 +14,7 @@ class TreeNode {
 	}
 }
 
-public class P11_DiameterOfBinaryTree {
+public class P11DiameterOfBinaryTree {
 	int ans;
 
 	public int diameterOfBinaryTree(TreeNode root) {
