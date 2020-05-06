@@ -4,9 +4,6 @@
 
 package may_challenge;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * @author shiyuanchen
  * @created 2020/05/06
@@ -15,14 +12,15 @@ import java.util.Map;
 public class P6MajorityElement {
 
     public static int majorityElement(int[] nums) {
-        Map<Integer, Integer> map = new HashMap<>();
-        for (int i : nums) {
-            if (map.getOrDefault(i, 0) >= (nums.length / 2)) {
-                return i;
+        int count = 0;
+        Integer candidate = null;
+        for (int num : nums) {
+            if (count == 0) {
+                candidate = num;
             }
-            map.put(i, map.getOrDefault(i, 0) + 1);
+            count += candidate == num ? 1 : -1;
         }
-        return -1;
+        return candidate;
     }
 
     public static void main(String[] args) {
