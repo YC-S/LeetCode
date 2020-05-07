@@ -2,7 +2,7 @@
  * Copyright (c) 2020. Yuanchen
  */
 
-package p30daychallenge;
+package april_challenge;
 
 import java.util.HashMap;
 import java.util.Map;
