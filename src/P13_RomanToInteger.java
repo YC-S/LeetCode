@@ -11,22 +11,22 @@ public class P13_RomanToInteger {
 
   public int romanToInt(String s) {
     int sum = 0;
-    if (s.indexOf("IV") != -1) {
+    if (s.contains("IV")) {
       sum -= 2;
     }
-    if (s.indexOf("IX") != -1) {
+    if (s.contains("IX")) {
       sum -= 2;
     }
-    if (s.indexOf("XL") != -1) {
+    if (s.contains("XL")) {
       sum -= 20;
     }
-    if (s.indexOf("XC") != -1) {
+    if (s.contains("XC")) {
       sum -= 20;
     }
-    if (s.indexOf("CD") != -1) {
+    if (s.contains("CD")) {
       sum -= 200;
     }
-    if (s.indexOf("CM") != -1) {
+    if (s.contains("CM")) {
       sum -= 200;
     }
 
