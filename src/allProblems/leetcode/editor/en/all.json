@@ -1363,7 +1363,8 @@
     "titleSlug": "construct-binary-tree-from-inorder-and-postorder-traversal"
   },
   {
-    "articleLive": 0,
+    "articleLive": 1,
+    "articleSlug": "binary-tree-level-order-traversal-ii",
     "formTitle": "[107]Binary Tree Level Order Traversal II",
     "frontendQuestionId": "107",
     "leaf": true,
@@ -4183,7 +4184,7 @@
     "level": 2,
     "nodeType": "def",
     "questionId": "328",
-    "status": "",
+    "status": "ac",
     "title": "Odd Even Linked List",
     "titleSlug": "odd-even-linked-list"
   },
@@ -4309,7 +4310,7 @@
     "level": 2,
     "nodeType": "def",
     "questionId": "338",
-    "status": "",
+    "status": "ac",
     "title": "Counting Bits",
     "titleSlug": "counting-bits"
   },
@@ -4976,7 +4977,8 @@
     "titleSlug": "perfect-rectangle"
   },
   {
-    "articleLive": 0,
+    "articleLive": 1,
+    "articleSlug": "is-subsequence",
     "formTitle": "[392]Is Subsequence",
     "frontendQuestionId": "392",
     "leaf": true,
@@ -5557,7 +5559,7 @@
     "level": 2,
     "nodeType": "def",
     "questionId": "438",
-    "status": "",
+    "status": "ac",
     "title": "Find All Anagrams in a String",
     "titleSlug": "find-all-anagrams-in-a-string"
   },
@@ -5599,7 +5601,8 @@
     "titleSlug": "arranging-coins"
   },
   {
-    "articleLive": 0,
+    "articleLive": 1,
+    "articleSlug": "find-all-duplicates-in-an-array",
     "formTitle": "[442]Find All Duplicates in an Array",
     "frontendQuestionId": "442",
     "leaf": true,
@@ -5720,7 +5723,7 @@
     "level": 2,
     "nodeType": "def",
     "questionId": "451",
-    "status": "",
+    "status": "ac",
     "title": "Sort Characters By Frequency",
     "titleSlug": "sort-characters-by-frequency"
   },
@@ -5813,7 +5816,8 @@
     "titleSlug": "poor-pigs"
   },
   {
-    "articleLive": 0,
+    "articleLive": 1,
+    "articleSlug": "repeated-substring-pattern",
     "formTitle": "[459]Repeated Substring Pattern",
     "frontendQuestionId": "459",
     "leaf": true,
@@ -7184,7 +7188,7 @@
     "level": 2,
     "nodeType": "def",
     "questionId": "567",
-    "status": "",
+    "status": "ac",
     "title": "Permutation in String",
     "titleSlug": "permutation-in-string"
   },
@@ -11326,7 +11330,7 @@
     "level": 2,
     "nodeType": "def",
     "questionId": "922",
-    "status": "",
+    "status": "ac",
     "title": "Possible Bipartition",
     "titleSlug": "possible-bipartition"
   },
@@ -11521,7 +11525,7 @@
     "level": 2,
     "nodeType": "def",
     "questionId": "937",
-    "status": "",
+    "status": "ac",
     "title": "Online Stock Span",
     "titleSlug": "online-stock-span"
   },
@@ -11741,7 +11745,7 @@
     "level": 2,
     "nodeType": "def",
     "questionId": "954",
-    "status": "",
+    "status": "ac",
     "title": "Maximum Sum Circular Subarray",
     "titleSlug": "maximum-sum-circular-subarray"
   },
@@ -12624,7 +12628,7 @@
     "level": 2,
     "nodeType": "def",
     "questionId": "1028",
-    "status": "",
+    "status": "ac",
     "title": "Interval List Intersections",
     "titleSlug": "interval-list-intersections"
   },
@@ -13228,7 +13232,7 @@
     "level": 2,
     "nodeType": "def",
     "questionId": "1105",
-    "status": "",
+    "status": "ac",
     "title": "Uncrossed Lines",
     "titleSlug": "uncrossed-lines"
   },
@@ -16150,7 +16154,7 @@
     "level": 2,
     "nodeType": "def",
     "questionId": "1402",
-    "status": "",
+    "status": "ac",
     "title": "Count Square Submatrices with All Ones",
     "titleSlug": "count-square-submatrices-with-all-ones"
   },
@@ -17953,7 +17957,7 @@
     "level": 1,
     "nodeType": "def",
     "questionId": "1391",
-    "status": "notac",
+    "status": "ac",
     "title": "Counting Elements",
     "titleSlug": "counting-elements"
   },
@@ -17966,7 +17970,7 @@
     "level": 1,
     "nodeType": "def",
     "questionId": "1345",
-    "status": "notac",
+    "status": "ac",
     "title": "Perform String Shifts",
     "titleSlug": "perform-string-shifts"
   },
@@ -17979,7 +17983,7 @@
     "level": 2,
     "nodeType": "def",
     "questionId": "1374",
-    "status": "",
+    "status": "ac",
     "title": "Leftmost Column with at Least a One",
     "titleSlug": "leftmost-column-with-at-least-a-one"
   },
@@ -17992,7 +17996,7 @@
     "level": 2,
     "nodeType": "def",
     "questionId": "1366",
-    "status": "",
+    "status": "ac",
     "title": "First Unique Number",
     "titleSlug": "first-unique-number"
   },
@@ -18004,7 +18008,7 @@
     "level": 2,
     "nodeType": "def",
     "questionId": "1432",
-    "status": "",
+    "status": "ac",
     "title": "Check If a String Is a Valid Sequence from Root to Leaves Path in a Binary Tree",
     "titleSlug": "check-if-a-string-is-a-valid-sequence-from-root-to-leaves-path-in-a-binary-tree"
   },
@@ -18175,5 +18179,281 @@
     "status": "",
     "title": "Number of Ways of Cutting a Pizza",
     "titleSlug": "number-of-ways-of-cutting-a-pizza"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1445]Apples & Oranges",
+    "frontendQuestionId": "1445",
+    "leaf": true,
+    "level": 2,
+    "nodeType": "def",
+    "questionId": "1578",
+    "status": "",
+    "title": "Apples & Oranges",
+    "titleSlug": "apples-oranges"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1446]Consecutive Characters",
+    "frontendQuestionId": "1446",
+    "leaf": true,
+    "level": 1,
+    "nodeType": "def",
+    "questionId": "1542",
+    "status": "",
+    "title": "Consecutive Characters",
+    "titleSlug": "consecutive-characters"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1447]Simplified Fractions",
+    "frontendQuestionId": "1447",
+    "leaf": true,
+    "level": 2,
+    "nodeType": "def",
+    "questionId": "1543",
+    "status": "",
+    "title": "Simplified Fractions",
+    "titleSlug": "simplified-fractions"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1448]Count Good Nodes in Binary Tree",
+    "frontendQuestionId": "1448",
+    "leaf": true,
+    "level": 2,
+    "nodeType": "def",
+    "questionId": "1544",
+    "status": "",
+    "title": "Count Good Nodes in Binary Tree",
+    "titleSlug": "count-good-nodes-in-binary-tree"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1449]Form Largest Integer With Digits That Add up to Target",
+    "frontendQuestionId": "1449",
+    "leaf": true,
+    "level": 3,
+    "nodeType": "def",
+    "questionId": "1545",
+    "status": "",
+    "title": "Form Largest Integer With Digits That Add up to Target",
+    "titleSlug": "form-largest-integer-with-digits-that-add-up-to-target"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1450]Number of Students Doing Homework at a Given Time",
+    "frontendQuestionId": "1450",
+    "leaf": true,
+    "level": 1,
+    "nodeType": "def",
+    "questionId": "1560",
+    "status": "",
+    "title": "Number of Students Doing Homework at a Given Time",
+    "titleSlug": "number-of-students-doing-homework-at-a-given-time"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1451]Rearrange Words in a Sentence",
+    "frontendQuestionId": "1451",
+    "leaf": true,
+    "level": 2,
+    "nodeType": "def",
+    "questionId": "1561",
+    "status": "",
+    "title": "Rearrange Words in a Sentence",
+    "titleSlug": "rearrange-words-in-a-sentence"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1452]People Whose List of Favorite Companies Is Not a Subset of Another List",
+    "frontendQuestionId": "1452",
+    "leaf": true,
+    "level": 2,
+    "nodeType": "def",
+    "questionId": "1562",
+    "status": "",
+    "title": "People Whose List of Favorite Companies Is Not a Subset of Another List",
+    "titleSlug": "people-whose-list-of-favorite-companies-is-not-a-subset-of-another-list"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1453]Maximum Number of Darts Inside of a Circular Dartboard",
+    "frontendQuestionId": "1453",
+    "leaf": true,
+    "level": 3,
+    "nodeType": "def",
+    "questionId": "1563",
+    "status": "",
+    "title": "Maximum Number of Darts Inside of a Circular Dartboard",
+    "titleSlug": "maximum-number-of-darts-inside-of-a-circular-dartboard"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1454]Active Users",
+    "frontendQuestionId": "1454",
+    "leaf": true,
+    "level": 2,
+    "nodeType": "def",
+    "questionId": "1579",
+    "status": "",
+    "title": "Active Users",
+    "titleSlug": "active-users"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1455]Check If a Word Occurs As a Prefix of Any Word in a Sentence",
+    "frontendQuestionId": "1455",
+    "leaf": true,
+    "level": 1,
+    "nodeType": "def",
+    "questionId": "1566",
+    "status": "",
+    "title": "Check If a Word Occurs As a Prefix of Any Word in a Sentence",
+    "titleSlug": "check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1456]Maximum Number of Vowels in a Substring of Given Length",
+    "frontendQuestionId": "1456",
+    "leaf": true,
+    "level": 2,
+    "nodeType": "def",
+    "questionId": "1567",
+    "status": "",
+    "title": "Maximum Number of Vowels in a Substring of Given Length",
+    "titleSlug": "maximum-number-of-vowels-in-a-substring-of-given-length"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1457]Pseudo-Palindromic Paths in a Binary Tree",
+    "frontendQuestionId": "1457",
+    "leaf": true,
+    "level": 2,
+    "nodeType": "def",
+    "questionId": "1568",
+    "status": "",
+    "title": "Pseudo-Palindromic Paths in a Binary Tree",
+    "titleSlug": "pseudo-palindromic-paths-in-a-binary-tree"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1458]Max Dot Product of Two Subsequences",
+    "frontendQuestionId": "1458",
+    "leaf": true,
+    "level": 3,
+    "nodeType": "def",
+    "questionId": "1569",
+    "status": "",
+    "title": "Max Dot Product of Two Subsequences",
+    "titleSlug": "max-dot-product-of-two-subsequences"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1459]Rectangles Area",
+    "frontendQuestionId": "1459",
+    "leaf": true,
+    "level": 2,
+    "nodeType": "def",
+    "questionId": "1607",
+    "status": "",
+    "title": "Rectangles Area",
+    "titleSlug": "rectangles-area"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1460]Make Two Arrays Equal by Reversing Sub-arrays",
+    "frontendQuestionId": "1460",
+    "leaf": true,
+    "level": 1,
+    "nodeType": "def",
+    "questionId": "1556",
+    "status": "",
+    "title": "Make Two Arrays Equal by Reversing Sub-arrays",
+    "titleSlug": "make-two-arrays-equal-by-reversing-sub-arrays"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1461]Check If a String Contains All Binary Codes of Size K",
+    "frontendQuestionId": "1461",
+    "leaf": true,
+    "level": 2,
+    "nodeType": "def",
+    "questionId": "1557",
+    "status": "",
+    "title": "Check If a String Contains All Binary Codes of Size K",
+    "titleSlug": "check-if-a-string-contains-all-binary-codes-of-size-k"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1462]Course Schedule IV",
+    "frontendQuestionId": "1462",
+    "leaf": true,
+    "level": 2,
+    "nodeType": "def",
+    "questionId": "1558",
+    "status": "",
+    "title": "Course Schedule IV",
+    "titleSlug": "course-schedule-iv"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1463]Cherry Pickup II",
+    "frontendQuestionId": "1463",
+    "leaf": true,
+    "level": 3,
+    "nodeType": "def",
+    "questionId": "1559",
+    "status": "",
+    "title": "Cherry Pickup II",
+    "titleSlug": "cherry-pickup-ii"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1464]Maximum Product of Two Elements in an Array",
+    "frontendQuestionId": "1464",
+    "leaf": true,
+    "level": 1,
+    "nodeType": "def",
+    "questionId": "1574",
+    "status": "",
+    "title": "Maximum Product of Two Elements in an Array",
+    "titleSlug": "maximum-product-of-two-elements-in-an-array"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1465]Maximum Area of a Piece of Cake After Horizontal and Vertical Cuts",
+    "frontendQuestionId": "1465",
+    "leaf": true,
+    "level": 2,
+    "nodeType": "def",
+    "questionId": "1575",
+    "status": "",
+    "title": "Maximum Area of a Piece of Cake After Horizontal and Vertical Cuts",
+    "titleSlug": "maximum-area-of-a-piece-of-cake-after-horizontal-and-vertical-cuts"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1466]Reorder Routes to Make All Paths Lead to the City Zero",
+    "frontendQuestionId": "1466",
+    "leaf": true,
+    "level": 2,
+    "nodeType": "def",
+    "questionId": "1576",
+    "status": "",
+    "title": "Reorder Routes to Make All Paths Lead to the City Zero",
+    "titleSlug": "reorder-routes-to-make-all-paths-lead-to-the-city-zero"
+  },
+  {
+    "articleLive": 0,
+    "formTitle": "[1467]Probability of a Two Boxes Having The Same Number of Distinct Balls",
+    "frontendQuestionId": "1467",
+    "leaf": true,
+    "level": 3,
+    "nodeType": "def",
+    "questionId": "1577",
+    "status": "",
+    "title": "Probability of a Two Boxes Having The Same Number of Distinct Balls",
+    "titleSlug": "probability-of-a-two-boxes-having-the-same-number-of-distinct-balls"
   }
 ]
