@@ -2,8 +2,6 @@
  * Copyright (c) 2020. Yuanchen
  */
 
-package utility;
-
 /**
  * @author shiyuanchen
  * @project LeetCode
