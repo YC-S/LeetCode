@@ -9,7 +9,7 @@ package july_challenge;
  * @project LeetCode
  * @since 2020/07/01
  */
-public class ArrangingCoins {
+public class P1ArrangingCoins {
 
   public int arrangeCoins(int n) {
     return (int) (Math.sqrt(2 * (long) n + 0.25) - 0.5);
