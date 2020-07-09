@@ -44,3 +44,4 @@ public class P9MaximumWidthOfBinaryTree {
     return this.maxWidth;
   }
 }
+
