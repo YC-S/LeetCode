@@ -11,7 +11,7 @@ import utility.Node;
  * @project LeetCode
  * @since 2020/07/10
  */
-public class P9FlattenAMultilevelDoublyLinkedList {
+public class P10FlattenAMultilevelDoublyLinkedList {
 
   public Node flatten(Node head) {
     if (head == null) {
