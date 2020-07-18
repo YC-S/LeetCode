@@ -5,6 +5,11 @@
 package july_challenge;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
 
 /**
  * @author shiyuanchen
@@ -15,15 +20,15 @@ public class P17CourseScheduleII {
 
   public int[] findOrder(int numCourses, int[][] prerequisites) {
     boolean isPossible = true;
-    Map<Integer, List<Integer>> adjList = new HashMap<Integer, List<Integer>>();
+    Map<Integer, List<Integer>> adjList = new HashMap<>();
     int[] indegree = new int[numCourses];
     int[] topologicalOrder = new int[numCourses];
 
     // Create the adjacency list representation of the graph
-    for (int i = 0; i < prerequisites.length; i++) {
-      int dest = prerequisites[i][0];
-      int src = prerequisites[i][1];
-      List<Integer> lst = adjList.getOrDefault(src, new ArrayList<Integer>());
+    for (int[] prerequisite : prerequisites) {
+      int dest = prerequisite[0];
+      int src = prerequisite[1];
+      List<Integer> lst = adjList.getOrDefault(src, new ArrayList<>());
       lst.add(dest);
       adjList.put(src, lst);
 
@@ -32,7 +37,7 @@ public class P17CourseScheduleII {
     }
 
     // Add all vertices with 0 in-degree to the queue
-    Queue<Integer> q = new LinkedList<Integer>();
+    Queue<Integer> q = new LinkedList<>();
     for (int i = 0; i < numCourses; i++) {
       if (indegree[i] == 0) {
         q.add(i);
