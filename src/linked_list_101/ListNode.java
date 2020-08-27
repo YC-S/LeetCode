@@ -9,12 +9,12 @@ package linked_list_101;
  * @project LeetCode
  * @since 2020/08/25
  */
-public class SinglyListNode {
+public class ListNode {
 
   int val;
-  SinglyListNode next;
+  ListNode next;
 
-  SinglyListNode(int x) {
+  ListNode(int x) {
     val = x;
     next = null;
   }
