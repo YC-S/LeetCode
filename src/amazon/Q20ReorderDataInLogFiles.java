@@ -27,9 +27,9 @@ public class Q20ReorderDataInLogFiles {
         if (!isDigit1 && !isDigit2) {
           int comp = s1[1].compareTo(s2[1]);
           return comp == 0 ? s1[0].compareTo(s2[0]) : comp;
-        } else if (!isDigit1 && isDigit2) {
+        } else if (!isDigit1) {
           return -1;
-        } else if (isDigit1 && !isDigit2) {
+        } else if (!isDigit2) {
           return 1;
         } else {
           return 0;
