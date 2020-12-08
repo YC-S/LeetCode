@@ -24,7 +24,7 @@ public class P2BinaryTreeLevelOrderTraversalII {
       return wrapList;
     }
 
-    queue.offer(root);
+      queue.offer(root);
     while (!queue.isEmpty()) {
       int levelNum = queue.size();
       List<Integer> subList = new LinkedList<Integer>();
