@@ -9,17 +9,17 @@ import java.util.Arrays;
  * @project LeetCode
  * @since 2020/07/29
  */
-public class P832FlippingAnImage {
+public class P832_FlippingAnImage {
 
-  public static int[][] flipAndInvertImage(int[][] A) {
-    for (int i = 0; i < A.length; i++) {
-      for (int j = 0; j < A[i].length / 2; j++) {
-        swap(A[i], j, A[i].length - j - 1);
-      }
-      for (int j = 0; j < A[i].length; j++) {
-        if (A[i][j] == 0) {
-          A[i][j] = 1;
-        } else {
+    public static int[][] flipAndInvertImage(int[][] A) {
+        for (int i = 0; i < A.length; i++) {
+            for (int j = 0; j < A[i].length / 2; j++) {
+                swap(A[i], j, A[i].length - j - 1);
+            }
+            for (int j = 0; j < A[i].length; j++) {
+                if (A[i][j] == 0) {
+                    A[i][j] = 1;
+                } else {
           A[i][j] = 0;
         }
         A[i][j] = (A[i][j] == 0) ? 1 : 0;

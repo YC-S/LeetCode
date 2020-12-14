@@ -10,17 +10,17 @@ import java.util.List;
  * @project LeetCode
  * @since 2020/07/29
  */
-public class P1380LuckyNumbersInAMatrix {
+public class P1380_LuckyNumbersInAMatrix {
 
-  public static List<Integer> luckyNumbers(int[][] matrix) {
-    List<Integer> res = new ArrayList<>();
-    // check the index of the smallest number in the first row
-    int minIndex = 0;
-    for (int[] array : matrix) {
-      for (int index = 0; index < array.length; index++) {
-        if (array[index] < array[minIndex]) {
-          minIndex = index;
-        }
+    public static List<Integer> luckyNumbers(int[][] matrix) {
+        List<Integer> res = new ArrayList<>();
+        // check the index of the smallest number in the first row
+        int minIndex = 0;
+        for (int[] array : matrix) {
+            for (int index = 0; index < array.length; index++) {
+                if (array[index] < array[minIndex]) {
+                    minIndex = index;
+                }
       }
     }
     // find the correct row
