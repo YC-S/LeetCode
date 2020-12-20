@@ -19,6 +19,7 @@ public class F1 {
         List<String> list = new ArrayList<>();
         list.add("foo");
         list.add("bar");
+        list.add("abc");
         String[] array = list.toArray(new String[0]);
         System.out.println(Arrays.toString(array));
     }

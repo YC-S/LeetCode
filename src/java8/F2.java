@@ -16,7 +16,7 @@ public class F2 {
 
     public static void main(String[] args) {
         String[] str = {"yang", "guo"};
-        List list = Arrays.asList(str);
+        List<String> list = Arrays.asList(str);
         str[0] = "cc";
         System.out.println(list);
     }

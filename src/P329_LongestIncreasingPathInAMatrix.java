@@ -23,8 +23,7 @@ public class P329_LongestIncreasingPathInAMatrix {
      * lower mid because we need to find the minimum one. This leads to r = mid - 1;
      */
     public int splitArray(int[] nums, int m) {
-        int max = 0;
-        long sum = 0;
+        int max = 0; long sum = 0;
         for (int num : nums) {
             max = Math.max(num, max);
             sum += num;
@@ -49,7 +48,7 @@ public class P329_LongestIncreasingPathInAMatrix {
     public boolean valid(long target, int[] nums, int m) {
         int count = 1;
         long total = 0;
-        for (int num : nums) {
+        for(int num : nums) {
             total += num;
             if (total > target) {
                 total = num;

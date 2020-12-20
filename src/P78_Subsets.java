@@ -12,7 +12,6 @@ import java.util.List;
  * @since 2020/12/12
  */
 public class P78_Subsets {
-
     public List<List<Integer>> subsets(int[] S) {
         List<List<Integer>> res = new ArrayList<>();
         res.add(new ArrayList<Integer>());

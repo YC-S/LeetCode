@@ -8,7 +8,6 @@
  * @since 2020/12/09
  */
 public class P31_NextPermutation {
-
     public void nextPermutation(int[] nums) {
         if (nums.length == 1) {
             return;

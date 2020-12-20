@@ -18,16 +18,16 @@ public class P1528_ShuffleString {
         String s2 = "aiohn";
         int[] indices3 = {3, 1, 4, 2, 0};
         System.out.println(solution.restoreString(s, indices));
-    System.out.println(solution.restoreString(s1, indices2));
-    System.out.println(solution.restoreString(s2, indices3));
-  }
+        System.out.println(solution.restoreString(s1, indices2));
+        System.out.println(solution.restoreString(s2, indices3));
+    }
 
-  public String restoreString(String s, int[] indices) {
-    StringBuilder str = new StringBuilder();
-    str.setLength(s.length());
+    public String restoreString(String s, int[] indices) {
+        StringBuilder str = new StringBuilder();
+        str.setLength(s.length());
 
-    for (int i = 0; i < str.length(); i++) {
-      str.setCharAt(indices[i], s.charAt(i));
+        for (int i = 0; i < str.length(); i++) {
+            str.setCharAt(indices[i], s.charAt(i));
     }
 
     return str.toString();

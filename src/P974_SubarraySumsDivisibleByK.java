@@ -11,7 +11,6 @@ import java.util.Map;
  * @since 2020/12/11
  */
 public class P974_SubarraySumsDivisibleByK {
-
     public int subarraysDivByK(int[] A, int K) {
         Map<Integer, Integer> map = new HashMap<>();
         map.put(0, 1);

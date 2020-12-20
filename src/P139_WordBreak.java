@@ -12,7 +12,6 @@ import java.util.Set;
  * @since 2020/12/11
  */
 public class P139_WordBreak {
-
     // Time Complexity O(n^3)
     // Space Complexity (n)
     public boolean wordBreak(String s, List<String> wordDict) {

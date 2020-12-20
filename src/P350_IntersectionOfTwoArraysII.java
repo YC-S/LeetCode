@@ -11,7 +11,6 @@ import java.util.HashMap;
  * @since 2020/12/09
  */
 public class P350_IntersectionOfTwoArraysII {
-
     public static int[] intersect(int[] nums1, int[] nums2) {
         if (nums1.length > nums2.length) {
             return intersect(nums2, nums1);

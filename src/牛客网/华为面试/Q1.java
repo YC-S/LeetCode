@@ -2,7 +2,7 @@
  * Copyright (c) 2020. Yuanchen
  */
 
-package 牛客网.华为;
+package 牛客网.华为面试;
 
 import java.util.ArrayList;
 import java.util.List;

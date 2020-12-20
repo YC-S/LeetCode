@@ -10,7 +10,6 @@ import java.util.Arrays;
  * @since 2020/12/08
  */
 public class P88_MergeSortedArray {
-
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         int[] nums3 = Arrays.copyOf(nums1, m);
         int i = 0, j = 0, k = 0;

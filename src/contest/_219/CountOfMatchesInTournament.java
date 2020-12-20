@@ -10,7 +10,6 @@ package contest._219;
  * @since 2020/12/12
  */
 public class CountOfMatchesInTournament {
-
     public static void main(String[] args) {
         CountOfMatchesInTournament solution = new CountOfMatchesInTournament();
         System.out.println(solution.numberOfMatches(7));

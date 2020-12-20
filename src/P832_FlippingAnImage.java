@@ -20,16 +20,16 @@ public class P832_FlippingAnImage {
                 if (A[i][j] == 0) {
                     A[i][j] = 1;
                 } else {
-          A[i][j] = 0;
+                    A[i][j] = 0;
+                }
+                A[i][j] = (A[i][j] == 0) ? 1 : 0;
+            }
         }
-        A[i][j] = (A[i][j] == 0) ? 1 : 0;
-      }
+        return A;
     }
-    return A;
-  }
 
-  public static void main(String[] args) {
-    int[][] input1 = {{1, 1, 0}, {1, 0, 1}, {0, 0, 0}};
+    public static void main(String[] args) {
+        int[][] input1 = {{1, 1, 0}, {1, 0, 1}, {0, 0, 0}};
     int[][] input2 = {{1, 1, 0, 0}, {1, 0, 0, 1}, {0, 1, 1, 1}, {1, 0, 1, 0}};
     int[][] res = flipAndInvertImage(input1);
     int[][] res2 = flipAndInvertImage(input2);

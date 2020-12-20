@@ -21,16 +21,16 @@ public class P1380_LuckyNumbersInAMatrix {
                 if (array[index] < array[minIndex]) {
                     minIndex = index;
                 }
-      }
-    }
-    // find the correct row
-    int maxRow = 0;
-    for (int i = 0; i < matrix.length; i++) {
-      if (matrix[i][minIndex] > matrix[maxRow][minIndex]) {
-        maxRow = i;
-      }
-    }
-    // check if the number is the smallest in the result row
+            }
+        }
+        // find the correct row
+        int maxRow = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            if (matrix[i][minIndex] > matrix[maxRow][minIndex]) {
+                maxRow = i;
+            }
+        }
+        // check if the number is the smallest in the result row
     int smallest = matrix[maxRow][minIndex];
     for (int i = 0; i < matrix[maxRow].length; i++) {
       if (matrix[maxRow][i] < smallest) {

@@ -22,7 +22,7 @@ public class F3 {
         Iterator<String> iterator = list.iterator();
         while (iterator.hasNext()) {
             String item = iterator.next();
-            if (1 == 1) {
+            if ("1".equals(item)) {
                 iterator.remove();
             }
         }

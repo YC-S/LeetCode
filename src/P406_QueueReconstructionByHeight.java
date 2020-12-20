@@ -13,7 +13,6 @@ import java.util.List;
  * @since 2020/12/11
  */
 public class P406_QueueReconstructionByHeight {
-
     // Time complexity : O(N^2)
     // Space complexity: O(N^2)
     public int[][] reconstructQueue(int[][] people) {
