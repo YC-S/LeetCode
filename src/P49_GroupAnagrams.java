@@ -2,11 +2,7 @@
  * Copyright (c) 2020. Yuanchen
  */
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author shiyuanchen
@@ -22,7 +18,7 @@ public class P49_GroupAnagrams {
         if (strs.length == 0) {
             return new ArrayList();
         }
-        Map<String, List> ans = new HashMap<>(10);
+        Map<String, List> ans = new HashMap<String, List>();
         for (String s : strs) {
             char[] ca = s.toCharArray();
             Arrays.sort(ca);
