@@ -11,7 +11,7 @@ import java.util.*;
  * @project LeetCode
  * @since 2020/12/05
  */
-public class MinimumIncompatibility {
+public class P1681_MinimumIncompatibility {
 
     static int N;
     static Map<String, Integer> memo;

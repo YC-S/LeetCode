@@ -2,8 +2,6 @@
  * Copyright (c) 2020. Yuanchen
  */
 
-package contest.leetcode.双周赛._b_40;
-
 /**
  * @author shiyuanchen
  * @project LeetCode
@@ -28,7 +26,7 @@ class ListNode {
     }
 }
 
-public class MergeBetweenLinkedLists {
+public class P1669_MergeBetweenLinkedLists {
 
     public ListNode mergeInBetween(ListNode list1, int a, int b, ListNode list2) {
         ListNode curb = list1;

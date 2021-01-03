@@ -2,8 +2,6 @@
  * Copyright (c) 2020. Yuanchen
  */
 
-package contest.leetcode.双周赛._b_40;
-
 import java.util.ArrayDeque;
 import java.util.Deque;
 
@@ -12,17 +10,17 @@ import java.util.Deque;
  * @project LeetCode
  * @since 2020/11/29
  */
-public class FrontMiddleBackQueue {
+public class P1670_FrontMiddleBackQueue {
 
 
     Deque<Integer> dq;
 
-    public FrontMiddleBackQueue() {
+    public P1670_FrontMiddleBackQueue() {
         dq = new ArrayDeque<>();
     }
 
     public static void main(String[] args) {
-        FrontMiddleBackQueue fmb = new FrontMiddleBackQueue();
+        P1670_FrontMiddleBackQueue fmb = new P1670_FrontMiddleBackQueue();
         fmb.pushFront(888438);
         fmb.pushMiddle(772690);
         fmb.pushMiddle(375192);

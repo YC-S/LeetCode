@@ -3,23 +3,23 @@ package contest.leetcode.单周赛._221;
 import java.util.Arrays;
 
 public class Q4 {
-    public static int[] maximizeXor(int[] nums, int[][] q) {
+    public static int[] maximizeXor(int[] nums, int[][] queries) {
         Trie root = new Trie();
-        int[][] queries = new int[q.length][q[0].length + 1];
-        for (int i = 0; i < q.length; i++) {
-            queries[i][0] = q[i][0];
-            queries[i][1] = q[i][1];
-            queries[i][2] = i;
+        int[][] q = new int[queries.length][queries[0].length + 1];
+        for (int i = 0; i < queries.length; i++) {
+            q[i][0] = queries[i][0];
+            q[i][1] = queries[i][1];
+            q[i][2] = i;
         }
         Arrays.sort(nums);
-        Arrays.sort(queries, (a, b) -> {
+        Arrays.sort(q, (a, b) -> {
             return a[1] - b[1];
         });
-        int[] output = new int[q.length];
+        int[] output = new int[queries.length];
         Arrays.fill(output, -1);
         int p = 0;
-        for (int i = 0; i < q.length; i++) {
-            while (p < nums.length && nums[p] <= queries[i][1]) {
+        for (int i = 0; i < queries.length; i++) {
+            while (p < nums.length && nums[p] <= q[i][1]) {
                 insert(root, nums[p]);
                 p++;
             }
@@ -29,7 +29,7 @@ public class Q4 {
                 continue;
             }
             for (int j = 31; j >= 0; j--) {
-                if (((1 << j) & queries[i][0]) == 0) {
+                if (((1 << j) & q[i][0]) == 0) {
                     if (curr.right != null) {
                         res |= (1 << j);
                         curr = curr.right;
@@ -45,7 +45,7 @@ public class Q4 {
                     }
                 }
             }
-            output[queries[i][2]] = res;
+            output[q[i][2]] = res;
         }
         return output;
     }

@@ -1,6 +1,6 @@
 package contest.leetcode.双周赛._b_41;
 
-public class SumOfAbsoluteDifferencesInASortedArray {
+public class P1685_SumOfAbsoluteDifferencesInASortedArray {
     public int[] getSumAbsoluteDifferences(int[] nums) {
         int len = nums.length - 1;
         for (int i = 1; i <= len; i++) {

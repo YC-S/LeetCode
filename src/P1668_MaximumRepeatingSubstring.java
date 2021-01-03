@@ -2,14 +2,12 @@
  * Copyright (c) 2020. Yuanchen
  */
 
-package contest.leetcode.双周赛._b_40;
-
 /**
  * @author shiyuanchen
  * @project LeetCode
  * @since 2020/11/29
  */
-public class MaximumRepeatingSubstring {
+public class P1668_MaximumRepeatingSubstring {
 
     public static int maxRepeating(String sequence, String word) {
         int max = 0, cur = 0;

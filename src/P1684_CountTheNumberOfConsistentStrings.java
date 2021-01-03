@@ -1,9 +1,7 @@
-package contest.leetcode.双周赛._b_41;
-
 import java.util.HashSet;
 import java.util.Set;
 
-public class CountTheNumberOfConsistentStrings {
+public class P1684_CountTheNumberOfConsistentStrings {
     public int countConsistentStrings(String allowed, String[] words) {
         Set<Character> set = new HashSet<>();
         for (char c : allowed.toCharArray()) {
