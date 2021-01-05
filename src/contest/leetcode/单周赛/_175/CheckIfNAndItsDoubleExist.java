@@ -1,6 +1,6 @@
 package contest.leetcode.单周赛._175;
 
-// Given an array arr of integers, check if there exists two integers N and M such that N is the
+// Given an data_structures.array arr of integers, check if there exists two integers N and M such that N is the
 // double of M ( i.e. N = 2 * M).
 //
 // More formally check if there exists two indices i and j such that :

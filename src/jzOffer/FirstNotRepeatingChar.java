@@ -25,6 +25,6 @@ public class FirstNotRepeatingChar {
     }
 
     public static void main(String[] args) {
-        System.out.println(FirstNotRepeatingChar("google"));
+        System.out.println(FirstNotRepeatingChar("company/google"));
     }
 }

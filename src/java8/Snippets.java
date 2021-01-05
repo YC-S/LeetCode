@@ -4,12 +4,7 @@
 
 package java8;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintWriter;
-import java.io.StringWriter;
+import java.io.*;
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
 import java.lang.reflect.Array;
@@ -18,22 +13,9 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.AbstractMap.SimpleEntry;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.OptionalInt;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.function.Function;
-import java.util.function.IntBinaryOperator;
-import java.util.function.IntFunction;
-import java.util.function.IntPredicate;
-import java.util.function.Predicate;
+import java.util.function.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -43,10 +25,10 @@ import java.util.stream.Stream;
 public abstract class Snippets {
 
     /**
-     * Calculates the greatest common denominator (gcd) of an array of numbers
+     * Calculates the greatest common denominator (gcd) of an data_structures.array of numbers
      *
      * @param numbers Array of numbers
-     * @return gcd of array of numbers
+     * @return gcd of data_structures.array of numbers
      */
     public static OptionalInt gcd(int[] numbers) {
         return Arrays.stream(numbers)
@@ -54,10 +36,10 @@ public abstract class Snippets {
     }
 
     /**
-     * Calculates the lowest common multiple (lcm) of an array of numbers.
+     * Calculates the lowest common multiple (lcm) of an data_structures.array of numbers.
      *
      * @param numbers Array of numbers
-     * @return lcm of array of numbers
+     * @return lcm of data_structures.array of numbers
      */
     public static OptionalInt lcm(int[] numbers) {
         IntBinaryOperator lcm = (x, y) -> (x * y) / gcd(x, y);
@@ -73,29 +55,29 @@ public abstract class Snippets {
     }
 
     /**
-     * Returns the maximum value in an array.
+     * Returns the maximum value in an data_structures.array.
      *
      * @param numbers Array of numbers
-     * @return maximum value in an array
+     * @return maximum value in an data_structures.array
      */
     public static OptionalInt arrayMax(int[] numbers) {
         return Arrays.stream(numbers).max();
     }
 
     /**
-     * Returns the minimum value in an array.
+     * Returns the minimum value in an data_structures.array.
      *
      * @param numbers Array of numbers
-     * @return minimum value in an array
+     * @return minimum value in an data_structures.array
      */
     public static OptionalInt arrayMin(int[] numbers) {
         return Arrays.stream(numbers).min();
     }
 
     /**
-     * Chunks an array into smaller arrays of a specified size.
+     * Chunks an data_structures.array into smaller arrays of a specified size.
      *
-     * @param numbers Input array of numbers
+     * @param numbers Input data_structures.array of numbers
      * @param size The chunk size
      * @return Smaller chunks
      */
@@ -108,7 +90,7 @@ public abstract class Snippets {
     }
 
     /**
-     * Counts the occurrences of a value in an array.
+     * Counts the occurrences of a value in an data_structures.array.
      *
      * @param numbers Array of numbers
      * @param value the value for which we have to count occurrences
@@ -121,10 +103,10 @@ public abstract class Snippets {
     }
 
     /**
-     * Deep flattens an array.
+     * Deep flattens an data_structures.array.
      *
-     * @param input A nested array containing integers
-     * @return flattened array
+     * @param input A nested data_structures.array containing integers
+     * @return flattened data_structures.array
      */
     public static int[] deepFlatten(Object[] input) {
         return Arrays.stream(input)
@@ -139,8 +121,8 @@ public abstract class Snippets {
     /**
      * Returns the difference between two arrays.
      *
-     * @param first the first array
-     * @param second the second array
+     * @param first the first data_structures.array
+     * @param second the second data_structures.array
      * @return Elements in first that are not in second
      */
     public static int[] difference(int[] first, int[] second) {
@@ -151,12 +133,12 @@ public abstract class Snippets {
     }
 
     /**
-     * Filters out all values from an array for which the comparator function does not return true.
+     * Filters out all values from an data_structures.array for which the comparator function does not return true.
      *
-     * @param first the first array
-     * @param second the second array
+     * @param first the first data_structures.array
+     * @param second the second data_structures.array
      * @param comparator the comparator function
-     * @return the resulting array
+     * @return the resulting data_structures.array
      */
     public static int[] differenceWith(int[] first, int[] second, IntBinaryOperator comparator) {
         return Arrays.stream(first)
@@ -167,7 +149,7 @@ public abstract class Snippets {
     }
 
     /**
-     * Returns all the distinct values of an array.
+     * Returns all the distinct values of an data_structures.array.
      *
      * @param elements ints
      * @return distinct values
@@ -177,8 +159,8 @@ public abstract class Snippets {
     }
 
     /**
-     * Removes elements in an array until the passed function returns true. Returns the remaining elements in the
-     * array.
+     * Removes elements in an data_structures.array until the passed function returns true. Returns the remaining elements in the
+     * data_structures.array.
      */
     public static int[] dropElements(int[] elements, IntPredicate condition) {
         while (elements.length > 0 && !condition.test(elements[0])) {
@@ -188,10 +170,10 @@ public abstract class Snippets {
     }
 
     /**
-     * Returns a new array with n elements removed from the right
+     * Returns a new data_structures.array with n elements removed from the right
      *
      * @param n number of elements to remove
-     * @return array after removing n elements
+     * @return data_structures.array after removing n elements
      */
     public static int[] dropRight(int[] elements, int n) {
         if (n < 0) {
@@ -203,7 +185,7 @@ public abstract class Snippets {
     }
 
     /**
-     * Returns every nth element in an array.
+     * Returns every nth element in an data_structures.array.
      */
     public static int[] everyNth(int[] elements, int nth) {
         return IntStream.range(0, elements.length)
@@ -213,12 +195,12 @@ public abstract class Snippets {
     }
 
     /**
-     * Filters out the non-unique values in an array.
+     * Filters out the non-unique values in an data_structures.array.
      * <p>
-     * Use Array.stream().filter() for an array containing only the unique values.
+     * Use Array.stream().filter() for an data_structures.array containing only the unique values.
      *
-     * @param elements input array
-     * @return unique values in the array
+     * @param elements input data_structures.array
+     * @return unique values in the data_structures.array
      */
     public static int[] filterNonUnique(int[] elements) {
         return Arrays.stream(elements)
@@ -227,11 +209,11 @@ public abstract class Snippets {
     }
 
     /**
-     * Find index of element in the array. Return -1 in case element does not exist.
+     * Find index of element in the data_structures.array. Return -1 in case element does not exist.
      * <p>
-     * Uses IntStream.range().filter() to find index of the element in the array.
+     * Uses IntStream.range().filter() to find index of the element in the data_structures.array.
      *
-     * @param elements input array
+     * @param elements input data_structures.array
      * @param el element to find
      * @return index of the element
      */
@@ -243,11 +225,11 @@ public abstract class Snippets {
     }
 
     /**
-     * Find last index of element in the array. Return -1 in case element does not exist.
+     * Find last index of element in the data_structures.array. Return -1 in case element does not exist.
      * <p>
-     * Uses IntStream.iterate().limit().filter() to find index of the element in the array.
+     * Uses IntStream.iterate().limit().filter() to find index of the element in the data_structures.array.
      *
-     * @param elements input array
+     * @param elements input data_structures.array
      * @param el element to find
      * @return index of the element
      */
@@ -260,10 +242,10 @@ public abstract class Snippets {
     }
 
     /**
-     * Flattens an array.
+     * Flattens an data_structures.array.
      *
-     * @param elements input array
-     * @return flattened array
+     * @param elements input data_structures.array
+     * @return flattened data_structures.array
      */
     public static int[] flatten(Object[] elements) {
         return Arrays.stream(elements)
@@ -274,11 +256,11 @@ public abstract class Snippets {
     }
 
     /**
-     * Flattens an array up to the specified depth.
+     * Flattens an data_structures.array up to the specified depth.
      *
-     * @param elements input array
-     * @param depth depth to which to flatten array
-     * @return flattened array
+     * @param elements input data_structures.array
+     * @param depth depth to which to flatten data_structures.array
+     * @return flattened data_structures.array
      */
     public static Object[] flattenDepth(Object[] elements, int depth) {
         if (depth == 0) {
@@ -294,9 +276,9 @@ public abstract class Snippets {
     }
 
     /**
-     * Groups the elements of an array based on the given function.
+     * Groups the elements of an data_structures.array based on the given function.
      *
-     * @param elements input array
+     * @param elements input data_structures.array
      * @param func function
      * @param <T> type parameter
      * @return grouped elements in a Map
@@ -306,7 +288,7 @@ public abstract class Snippets {
     }
 
     /**
-     * Returns all the elements of an array except the last one. Use Arrays.copyOfRange() to return all except the last
+     * Returns all the elements of an data_structures.array except the last one. Use Arrays.copyOfRange() to return all except the last
      * one
      */
     public static <T> T[] initial(T[] elements) {
@@ -314,7 +296,7 @@ public abstract class Snippets {
     }
 
     /**
-     * Initializes an array containing the numbers in the specified range where start and end are inclusive.
+     * Initializes an data_structures.array containing the numbers in the specified range where start and end are inclusive.
      */
     public static int[] initializeArrayWithRange(int end, int start) {
         return IntStream.rangeClosed(start, end).toArray();
@@ -416,7 +398,7 @@ public abstract class Snippets {
     public static <T> T[] similarity(T[] first, T[] second) {
         return Arrays.stream(first)
             .filter(a -> Arrays.stream(second).anyMatch(b -> Objects.equals(a, b)))
-            // Make a new array of first's runtime type, but empty content:
+            // Make a new data_structures.array of first's runtime type, but empty content:
             .toArray(i -> (T[]) Arrays.copyOf(new Object[0], i, first.getClass()));
     }
 

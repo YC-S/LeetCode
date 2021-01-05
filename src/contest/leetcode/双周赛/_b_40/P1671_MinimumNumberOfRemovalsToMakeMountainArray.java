@@ -36,7 +36,7 @@ public class P1671_MinimumNumberOfRemovalsToMakeMountainArray {
             }
         }
 
-        // calculating the maximum number of elements that can be involved in a mountain array.
+        // calculating the maximum number of elements that can be involved in a mountain data_structures.array.
         int max = 0;
         for (int i = 1; i < n - 1; i++) {
 		   /*
@@ -89,7 +89,7 @@ public class P1671_MinimumNumberOfRemovalsToMakeMountainArray {
             }
         }
 
-        // calculating the maximum number of elements that can be involved in a mountain array.
+        // calculating the maximum number of elements that can be involved in a mountain data_structures.array.
         int max = 0;
         for (int i = 1; i < n - 1; i++) {
 		   /*

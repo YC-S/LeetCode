@@ -4,11 +4,7 @@
 
 package top100;
 
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * @author shiyuanchen
@@ -43,7 +39,7 @@ public class P347TopKFrequentElements {
       }
     }
 
-    // 3. build an output array
+    // 3. build an output data_structures.array
     // O(k log k) time
     int[] top = new int[k];
     for (int i = k - 1; i >= 0; --i) {

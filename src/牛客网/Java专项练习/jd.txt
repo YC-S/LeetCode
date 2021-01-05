@@ -9479,7 +9479,7 @@ wailing and breadless. Then, the miserable bakers' shops were beset by
 long files of them, patiently waiting to buy bad bread; and while
 they waited with stomachs faint and empty, they beguiled the time by
 embracing one another on the triumphs of the day, and achieving them
-again in gossip. Gradually, these strings of ragged people shortened and
+again in gossip. Gradually, these data_structures.strings of ragged people shortened and
 frayed away; and then poor lights began to shine in high windows, and
 slender fires were made in the streets, at which neighbours cooked in
 common, afterwards supping at their doors.
@@ -16219,7 +16219,7 @@ Project Gutenberg-tm depends upon and cannot survive without wide
 spread public support and donations to carry out its mission of
 increasing the number of public domain and licensed works that can be
 freely distributed in machine readable form accessible by the widest
-array of equipment including outdated equipment.  Many small donations
+data_structures.array of equipment including outdated equipment.  Many small donations
 ($1 to $5,000) are particularly important to maintaining tax exempt
 status with the IRS.
 
