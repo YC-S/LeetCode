@@ -4,8 +4,8 @@ public class P4_MedianOfTwoSortedArrays {
 
     // find kth number of two sorted data_structures.array
     public static int findKth(int[] A, int startOfA,
-        int[] B, int startOfB,
-        int k) {
+                              int[] B, int startOfB,
+                              int k) {
         if (startOfA >= A.length) {
             return B[startOfB + k - 1];
         }
@@ -18,11 +18,11 @@ public class P4_MedianOfTwoSortedArrays {
         }
 
         int halfKthOfA = startOfA + k / 2 - 1 < A.length
-            ? A[startOfA + k / 2 - 1]
-            : Integer.MAX_VALUE;
+                ? A[startOfA + k / 2 - 1]
+                : Integer.MAX_VALUE;
         int halfKthOfB = startOfB + k / 2 - 1 < B.length
-            ? B[startOfB + k / 2 - 1]
-            : Integer.MAX_VALUE;
+                ? B[startOfB + k / 2 - 1]
+                : Integer.MAX_VALUE;
 
         if (halfKthOfA < halfKthOfB) {
             return findKth(A, startOfA + k / 2, B, startOfB, k - k / 2);
@@ -42,8 +42,8 @@ public class P4_MedianOfTwoSortedArrays {
 
         if (n % 2 == 0) {
             return (
-                findKth(A, 0, B, 0, n / 2) +
-                    findKth(A, 0, B, 0, n / 2 + 1)
+                    findKth(A, 0, B, 0, n / 2) +
+                            findKth(A, 0, B, 0, n / 2 + 1)
             ) / 2.0;
         }
 
