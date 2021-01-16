@@ -2,8 +2,6 @@ package all_problems;/*
  * Copyright (c) 2020. Yuanchen
  */
 
-import java.util.PriorityQueue;
-
 /**
  * @author shiyuanchen
  * @project LeetCode
@@ -11,23 +9,41 @@ import java.util.PriorityQueue;
  */
 public class P215_KthLargestElementInArray {
 
-    /**
-     *
-     */
     public int findKthLargest(int[] nums, int k) {
-        // init heap 'the smallest element first'
-        PriorityQueue<Integer> heap =
-            new PriorityQueue<Integer>((n1, n2) -> n1 - n2);
+        return quickSelect(nums, 0, nums.length - 1, k);
+    }
 
-        // keep k largest elements in the heap
-        for (int n : nums) {
-            heap.add(n);
-            if (heap.size() > k) {
-                heap.poll();
-            }
+    private int quickSelect(int[] nums, int left, int right, int k) {
+        if (left <= right) {
+            int p = partition(nums, left, right);
+            if (p == nums.length - k)
+                return nums[p];
+            else if (p > nums.length - k)
+                return quickSelect(nums, left, p - 1, k);
+            else
+                return quickSelect(nums, p + 1, right, k);
         }
+        return -1;
+    }
 
-        // output
-        return heap.poll();
+    private int partition(int[] nums, int left, int right) {
+        int i = left + 1, j = right;
+        while (true) {
+            while (i <= right && nums[i] < nums[left])
+                i++;
+            while (j >= left + 1 && nums[j] > nums[left])
+                j--;
+            if (i > j)
+                break;
+            int temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
+            i++;
+            j--;
+        }
+        int temp = nums[left];
+        nums[left] = nums[j];
+        nums[j] = temp;
+        return j;
     }
 }
