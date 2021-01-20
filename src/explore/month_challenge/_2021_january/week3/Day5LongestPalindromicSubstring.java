@@ -1,14 +1,6 @@
-package all_problems;/*
- * Copyright (c) 2020. Yuanchen
- */
+package explore.month_challenge._2021_january.week3;
 
-/**
- * @author shiyuanchen
- * @project LeetCode
- * @since 2020/06/01
- */
-public class P5_LongestPalindromicSubstring {
-
+public class Day5LongestPalindromicSubstring {
     public String longestPalindrome(String s) {
         if (s == null || s.length() < 2) {
             return s;
