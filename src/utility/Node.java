@@ -16,6 +16,7 @@ public class Node {
   public Node next;
   public Node child;
 
-  public Node(int i, Object o, Node head, Object o1) {
+  public Node(int val) {
+    this.val = val;
   }
 }

@@ -13,6 +13,6 @@ public class ListNode {
 		return "ListNode{" +
 				"val=" + val +
 				", next=" + next +
-				'}';
+				"}";
 	}
 }
