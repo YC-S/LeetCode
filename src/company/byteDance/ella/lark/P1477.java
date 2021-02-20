@@ -12,27 +12,28 @@ public class P1477 {
         int[] minLenStartAt = new int[arr.length];
         // End no-inclusive, e.g
         Range[] rangeEndAt = new Range[arr.length + 1];
-        Map<Integer, Integer> valuePosMap = new HashMap<>();
-        valuePosMap.put(preSum[preSum.length - 1], preSum.length - 1);
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(preSum[preSum.length - 1], preSum.length - 1);
         int shortest = Integer.MAX_VALUE;
         for (int i = preSum.length - 2; i >= 0; i--) {
-            Integer endIdx = valuePosMap.get(preSum[i] + target);
-            valuePosMap.put(preSum[i], i);
+            Integer endIdx = map.get(preSum[i] + target);
+            map.put(preSum[i], i);
             minLenStartAt[i] = shortest;
-            if (endIdx == null)
+            if (endIdx == null) {
                 continue;
-
+            }
             Range range = new Range(i, endIdx - i);
             rangeEndAt[endIdx] = range;
-            if (range.len < shortest)
+            if (range.len < shortest) {
                 minLenStartAt[i] = shortest = range.len;
+            }
         }
-
         shortest = Integer.MAX_VALUE;
         int result = Integer.MAX_VALUE;
         for (int i = 0; i < arr.length; i++) {
-            if (rangeEndAt[i] != null)
+            if (rangeEndAt[i] != null) {
                 shortest = Math.min(shortest, rangeEndAt[i].len);
+            }
 
             if (minLenStartAt[i] != Integer.MAX_VALUE && shortest != Integer.MAX_VALUE) {
                 result = Math.min(result, minLenStartAt[i] + shortest);
@@ -50,5 +51,4 @@ public class P1477 {
             this.len = len;
         }
     }
-
 }

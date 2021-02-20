@@ -1,31 +1,79 @@
 package all_problems;
 
-import javafx.util.Pair;
-
 import java.util.HashMap;
+import java.util.Map;
 
 public class P1396_DesignUndergroundSystem {
-    HashMap<String, Pair<Integer, Integer>> checkoutMap = new HashMap<>(); // Route - {TotalTime, Count}
-    HashMap<Integer, Pair<String, Integer>> checkInMap = new HashMap<>();  // Uid - {StationName, Time}
+    class Passenger {
+        int checkinTime;
+        int checkoutTime;
+        String checkinLocation;
+        String checkoutLocation;
 
-    public P1396_DesignUndergroundSystem() {
+        public Passenger(String checkinLocation, int checkinTime) {
+            this.checkinLocation = checkinLocation;
+            this.checkinTime = checkinTime;
+        }
+
+        void checkout(String checkoutLocation, int checkoutTime) {
+            this.checkoutLocation = checkoutLocation;
+            this.checkoutTime = checkoutTime;
+        }
+
     }
 
-    public void checkIn(int id, String stationName, int t) {
-        checkInMap.put(id, new Pair<>(stationName, t));
+    class Route {
+        String startStation;
+        String endStation;
+        int totalNumberOfTrips;
+        long totalTimeSpentInTrips;
+
+        public Route(String startStation, String endStation) {
+            this.startStation = startStation;
+            this.endStation = endStation;
+        }
+
+        double getAverageTime() {
+            return (double) totalTimeSpentInTrips / totalNumberOfTrips;
+        }
+
+        void addTrip(int startTime, int endTime) {
+            totalTimeSpentInTrips += endTime - startTime;
+            totalNumberOfTrips++;
+        }
     }
 
-    public void checkOut(int id, String stationName, int t) {
-        Pair<String, Integer> checkIn = checkInMap.get(id);
-        String route = checkIn.getKey() + "_" + stationName;
-        int totalTime = t - checkIn.getValue();
-        Pair<Integer, Integer> checkout = checkoutMap.getOrDefault(route, new Pair<>(0, 0));
-        checkoutMap.put(route, new Pair<>(checkout.getKey() + totalTime, checkout.getValue() + 1));
-    }
+    class UndergroundSystem {
 
-    public double getAverageTime(String startStation, String endStation) {
-        String route = startStation + "_" + endStation;
-        Pair<Integer, Integer> checkout = checkoutMap.get(route);
-        return (double) checkout.getKey() / checkout.getValue();
+        Map<Integer, Passenger> currentPassengerMap;
+        Map<String, Route> routeMap;
+
+        public UndergroundSystem() {
+            currentPassengerMap = new HashMap<>();
+            routeMap = new HashMap<>();
+        }
+
+        public void checkIn(int id, String stationName, int t) {
+            if (!currentPassengerMap.containsKey(id)) {
+                Passenger passenger = new Passenger(stationName, t);
+                currentPassengerMap.put(id, passenger);
+            }
+        }
+
+        public void checkOut(int id, String stationName, int t) {
+            if (currentPassengerMap.containsKey(id)) {
+                Passenger passenger = currentPassengerMap.get(id);
+                passenger.checkout(stationName, t);
+                String routeKey = passenger.checkinLocation + passenger.checkoutLocation;
+                Route route = routeMap.getOrDefault(routeKey, new Route(passenger.checkinLocation, passenger.checkoutLocation));
+                route.addTrip(passenger.checkinTime, passenger.checkoutTime);
+                routeMap.put(routeKey, route);
+                currentPassengerMap.remove(id);
+            }
+        }
+
+        public double getAverageTime(String startStation, String endStation) {
+            return routeMap.get(startStation + endStation).getAverageTime();
+        }
     }
 }

@@ -1,64 +1,94 @@
 package all_problems;
 
-import javafx.util.Pair;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
+import java.util.Set;
 
 public class P827_MakingALargeIsland {
-    public int N = 0;
-
     public int largestIsland(int[][] grid) {
-        N = grid.length;
-        //DFS every island and give it an index of island
-        int index = 3, res = 0;
-        HashMap<Integer, Integer> area = new HashMap<>();
-        for (int x = 0; x < N; ++x)
-            for (int y = 0; y < N; ++y)
-                if (grid[x][y] == 1) {
-                    area.put(index, dfs(grid, x, y, index));
-                    res = Math.max(res, area.get(index++));
-                }
+        int rows = grid.length;
+        int cols = grid[0].length;
 
-        //traverse every 0 cell and count biggest island it can conntect
-        for (int x = 0; x < N; ++x)
-            for (int y = 0; y < N; ++y)
-                if (grid[x][y] == 0) {
-                    HashSet<Integer> seen = new HashSet<>();
-                    int cur = 1;
-                    for (Pair<Integer, Integer> p : move(x, y)) {
-                        index = grid[p.getKey()][p.getValue()];
-                        if (index > 1 && !seen.contains(index)) {
-                            seen.add(index);
-                            cur += area.get(index);
+        // create father array and size array, and initialize them
+        int[] father = new int[rows * cols];
+        for (int i = 0; i < rows * cols; i++) {
+            father[i] = i;
+        }
+        int[] size = new int[rows * cols];
+        Arrays.fill(size, 1);
+
+        int[] dx = {0, 1, -1, 0};
+        int[] dy = {1, 0, 0, -1};
+
+        // scan grid, update father array and size array
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (grid[i][j] == 1) {
+                    int id = i * cols + j;
+                    for (int k = 0; k < 4; k++) {
+                        int newi = i + dx[k];
+                        int newj = j + dy[k];
+                        int newid = newi * cols + newj;
+                        if (isValid(rows, cols, newi, newj) && grid[newi][newj] == 1) {
+                            union(father, size, id, newid);
                         }
                     }
-                    res = Math.max(res, cur);
                 }
-        return res;
+            }
+        }
+
+        // find current max component size
+        int max = 0;
+        for (int i = 0; i < size.length; i++) {
+            max = Math.max(max, size[i]);
+        }
+
+        // find max component size if we set any 0 to 1
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (grid[i][j] == 0) {
+                    int id = i * cols + j;
+                    int combinedSize = 1;
+                    Set<Integer> prevFather = new HashSet<>();
+                    for (int k = 0; k < 4; k++) {
+                        int newi = i + dx[k];
+                        int newj = j + dy[k];
+                        int newid = newi * cols + newj;
+                        if (isValid(rows, cols, newi, newj) && grid[newi][newj] == 1) {
+                            int currFather = find(father, newid);
+                            if (prevFather.isEmpty() || !prevFather.contains(currFather)) {
+                                combinedSize += size[currFather];
+                                prevFather.add(currFather);
+                            }
+                        }
+                    }
+                    max = Math.max(max, combinedSize);
+                }
+            }
+        }
+
+        // return whole size if the grid is an all 1 matrix, otherwise return the value of max
+        return max == 0 ? rows * cols : max;
     }
 
-    public List<Pair<Integer, Integer>> move(int x, int y) {
-        List<Pair<Integer, Integer>> res = new ArrayList<>();
-        if (valid(x, y + 1)) res.add(new Pair<Integer, Integer>(x, y + 1));
-        if (valid(x, y - 1)) res.add(new Pair<Integer, Integer>(x, y - 1));
-        if (valid(x + 1, y)) res.add(new Pair<Integer, Integer>(x + 1, y));
-        if (valid(x - 1, y)) res.add(new Pair<Integer, Integer>(x - 1, y));
-        return res;
+    public int find(int[] father, int id) {
+        if (father[id] == id) {
+            return id;
+        }
+        return father[id] = find(father, father[id]);
     }
 
-    public boolean valid(int x, int y) {
-        return 0 <= x && x < N && 0 <= y && y < N;
+    public void union(int[] father, int[] size, int id1, int id2) {
+        int fa1 = find(father, id1);
+        int fa2 = find(father, id2);
+        if (fa1 != fa2) {
+            father[fa1] = fa2;
+            size[fa2] += size[fa1];
+        }
     }
 
-    public int dfs(int[][] grid, int x, int y, int index) {
-        int area = 0;
-        grid[x][y] = index;
-        for (Pair<Integer, Integer> p : move(x, y))
-            if (grid[p.getKey()][p.getValue()] == 1)
-                area += dfs(grid, p.getKey(), p.getValue(), index);
-        return area + 1;
+    public boolean isValid(int rows, int cols, int i, int j) {
+        return i >= 0 && i < rows && j >= 0 && j < cols;
     }
 }
