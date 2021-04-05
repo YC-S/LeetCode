@@ -1,7 +1,9 @@
 package all_problems;
 
+import java.util.Arrays;
+
 public class P684_RedundantConnection {
-    public int[] findRedundantConnection(int[][] edges) {
+    public static int[] findRedundantConnection(int[][] edges) {
         int[] parent = new int[2001];
         for (int i = 0; i < parent.length; i++) parent[i] = i;
 
@@ -14,10 +16,14 @@ public class P684_RedundantConnection {
         return new int[2];
     }
 
-    private int find(int[] parent, int f) {
+    private static int find(int[] parent, int f) {
         if (f != parent[f]) {
             parent[f] = find(parent, parent[f]);
         }
         return parent[f];
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString(findRedundantConnection(new int[][]{{1, 2}, {1, 3}, {2, 3}})));
     }
 }
