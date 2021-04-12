@@ -6,13 +6,9 @@ public class ValidateBST {
     }
 
     private static boolean helper(BST tree, int minValue, int maxValue) {
-        if (tree.value < minValue || tree.value > maxValue) {
-            return false;
-        }
-        if (tree.left != null && helper(tree.left, minValue, tree.value)) {
-            return false;
-        }
-        return tree.right == null || !helper(tree.right, tree.value, maxValue);
+        if (tree.value <= minValue || tree.value >= maxValue) return false;
+        if (tree.left != null && !helper(tree.left, minValue, tree.value)) return false;
+        return tree.right == null || helper(tree.right, tree.value, maxValue);
     }
 
     static class BST {
