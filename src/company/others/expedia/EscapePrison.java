@@ -3,9 +3,11 @@ package company.others.expedia;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class EscapePrison {
-    static long prison(int n, int m, int[] h, int[] v) {
+    static long prison(int n, int m, List<Integer> h, List<Integer> v) {
         ArrayList<ArrayList<Long>> prison = new ArrayList<ArrayList<Long>>();
         for (int r = 0; r <= n; r++) {
             ArrayList<Long> temp = new ArrayList<Long>();
@@ -15,16 +17,16 @@ public class EscapePrison {
             prison.add(temp);
         }
 
-        int[] x = h;
-        int xnum = x.length;
-        Arrays.sort(x);
-        int[] y = v;
-        int ynum = y.length;
-        Arrays.sort(y);
+        List<Integer> x = h;
+        int xnum = x.size();
+        Collections.sort(x);
+        List<Integer> y = v;
+        int ynum = y.size();
+        Collections.sort(y);
 
         //removing bar i means that list at i-1 and at i
         for (int a = xnum - 1; a >= 0; a--) {
-            int i = x[a];
+            int i = x.get(a);
             for (int cell = 0; cell < prison.get(i).size(); cell++) {
                 prison.get(i).set(cell, prison.get(i).get(cell) + prison.get(i - 1).get(cell));
             }
@@ -43,7 +45,7 @@ public class EscapePrison {
         }
 
         for (int b = ynum - 1; b >= 0; b--) {
-            int i = y[b];
+            int i = y.get(b);
             for (int cell = 0; cell < newprison.get(i).size(); cell++) {
                 newprison.get(i).set(cell, newprison.get(i).get(cell) + newprison.get(i - 1).get(cell));
             }
@@ -61,6 +63,6 @@ public class EscapePrison {
     }
 
     public static void main(String[] args) throws IOException {
-        System.out.println(prison(6, 6, new int[]{4}, new int[]{2}));
+        System.out.println(prison(6, 6, Arrays.asList(4), Arrays.asList(2)));
     }
 }
