@@ -15,15 +15,13 @@ public class BSTConstruction {
             // Do not edit the return statement of this method.
             if (value < this.value) {
                 if (left == null) {
-                    BST newBST = new BST(value);
-                    left = newBST;
+                    left = new BST(value);
                 } else {
                     left.insert(value);
                 }
             } else {
                 if (right == null) {
-                    BST newBST = new BST(value);
-                    this.right = newBST;
+                    this.right = new BST(value);
                 } else {
                     right.insert(value);
                 }
@@ -75,8 +73,6 @@ public class BSTConstruction {
                         this.value = right.value;
                         left = right.left;
                         right = right.right;
-                    } else {
-
                     }
                 } else if (parent.left == this) {
                     parent.left = left != null ? left : right;
