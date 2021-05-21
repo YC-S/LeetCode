@@ -8,7 +8,100 @@ import java.util.Map;
 public class AAlgorithm {
   public int[][] aStarAlgorithm(int startRow, int startCol, int endRow, int endCol, int[][] graph) {
     // Write your code here.
-    return new int[][] {};
+    List<List<Node>> nodes = initializeNodes(graph);
+    Node startNode = nodes.get(startRow).get(startCol);
+    Node endNode = nodes.get(endRow).get(endCol);
+    startNode.distanceFromStart = 0;
+    startNode.estimatedDistanceToEnd = calculateManhattanDistance(startNode, endNode);
+    List<Node> nodesToVisitList = new ArrayList<>();
+    nodesToVisitList.add(startNode);
+    MinHeap nodesToVisit = new MinHeap(nodesToVisitList);
+
+    while (!nodesToVisit.isEmpty()) {
+      Node currentMinDistanceNode = nodesToVisit.remove();
+      if (currentMinDistanceNode == endNode) {
+        break;
+      }
+      List<Node> neighbors = getNeighboringNodes(currentMinDistanceNode, nodes);
+
+      for (Node neighbor : neighbors) {
+        if (neighbor.value == 1) continue;
+        int tentativeDistanceToNeighbor = currentMinDistanceNode.distanceFromStart + 1;
+        if (tentativeDistanceToNeighbor >= neighbor.distanceFromStart) continue;
+        neighbor.cameFrom = currentMinDistanceNode;
+        neighbor.distanceFromStart = tentativeDistanceToNeighbor;
+        neighbor.estimatedDistanceToEnd =
+            tentativeDistanceToNeighbor + calculateManhattanDistance(neighbor, endNode);
+        if (!nodesToVisit.containsNode(neighbor)) {
+          nodesToVisit.insert(neighbor);
+        } else {
+          nodesToVisit.update(neighbor);
+        }
+      }
+    }
+    return reconstructPath(endNode);
+  }
+
+  List<List<Node>> initializeNodes(int[][] graph) {
+    List<List<Node>> nodes = new ArrayList<>();
+    for (int i = 0; i < graph.length; i++) {
+      List<Node> nodeList = new ArrayList<>();
+      nodes.add(nodeList);
+      for (int j = 0; j < graph[i].length; j++) {
+        nodes.get(i).add(new Node(i, j, graph[i][j]));
+      }
+    }
+    return nodes;
+  }
+
+  int calculateManhattanDistance(Node currentNode, Node endNode) {
+    int currentRow = currentNode.row;
+    int currentCol = currentNode.col;
+    int endRow = endNode.row;
+    int endCol = endNode.col;
+    return Math.abs(currentRow - endRow) + Math.abs(currentCol - endCol);
+  }
+
+  List<Node> getNeighboringNodes(Node node, List<List<Node>> nodes) {
+    List<Node> neighbors = new ArrayList<>();
+    int numRows = nodes.size();
+    int numCols = nodes.get(0).size();
+    int row = node.row;
+    int col = node.col;
+    if (row < numRows - 1) {
+      neighbors.add(nodes.get(row + 1).get(col));
+    }
+    if (row > 0) {
+      neighbors.add(nodes.get(row - 1).get(col));
+    }
+    if (col < numCols - 1) {
+      neighbors.add(nodes.get(row).get(col + 1));
+    }
+    if (col > 0) {
+      neighbors.add(nodes.get(row).get(col - 1));
+    }
+    return neighbors;
+  }
+
+  int[][] reconstructPath(Node endNode) {
+    if (endNode.cameFrom == null) {
+      return new int[][] {};
+    }
+    Node currentNode = endNode;
+    List<List<Integer>> path = new ArrayList<>();
+    while (currentNode != null) {
+      List<Integer> nodeData = new ArrayList<>();
+      nodeData.add(currentNode.row);
+      nodeData.add(currentNode.col);
+      path.add(nodeData);
+      currentNode = currentNode.cameFrom;
+    }
+    int[][] res = new int[path.size()][2];
+    for (int i = 0; i < res.length; i++) {
+      res[i][0] = path.get(res.length - 1 - i).get(0);
+      res[i][1] = path.get(res.length - 1 - i).get(1);
+    }
+    return res;
   }
 
   static class Node {
