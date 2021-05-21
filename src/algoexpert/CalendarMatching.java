@@ -37,7 +37,7 @@ public class CalendarMatching {
     int j = 0;
     while (i < calendar1.size() && j < calendar2.size()) {
       Meeting meeting1 = calendar1.get(i);
-      Meeting meeting2 = calendar1.get(j);
+      Meeting meeting2 = calendar2.get(j);
       if (meeting1.start < meeting2.start) {
         merged.add(meeting1);
         i++;
