@@ -1,18 +1,10 @@
 package all_problems;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class P1792_MaximumAveragePassRatio {
   public double maxAverageRatio(int[][] classes, int extraStudents) {
-    PriorityQueue<double[]> heap =
-        new PriorityQueue<double[]>(
-            new Comparator<double[]>() {
-              @Override
-              public int compare(double[] o1, double[] o2) {
-                return Double.compare(o2[0], o1[0]);
-              }
-            });
+    PriorityQueue<double[]> heap = new PriorityQueue<>((o1, o2) -> Double.compare(o2[0], o1[0]));
     for (int[] cl : classes) {
       double delta = profit(cl[0], cl[1]);
       heap.offer(new double[] {delta, cl[0], cl[1]});
