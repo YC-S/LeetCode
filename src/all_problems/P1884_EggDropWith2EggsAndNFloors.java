@@ -2,13 +2,18 @@ package all_problems;
 
 public class P1884_EggDropWith2EggsAndNFloors {
   public static int twoEggDrop(int n) {
-    int count = 0;
-    n += 1;
-    while (n != 1) {
-      count++;
-      n /= 2;
-    }
-    return count * 2;
+    int eggs = 2;
+    return drop(n, eggs, new int[n + 1][eggs + 1]);
+  }
+
+  private static int drop(int floors, int eggs, int[][] dp) {
+    if (eggs == 1 || floors <= 1) return floors;
+    if (dp[floors][eggs] > 0) return dp[floors][eggs];
+    int min = Integer.MAX_VALUE;
+    for (int f = 1; f <= floors; f++)
+      min = Math.min(min, 1 + Math.max(drop(f - 1, eggs - 1, dp), drop(floors - f, eggs, dp)));
+    dp[floors][eggs] = min;
+    return min;
   }
 
   public static void main(String[] args) {
