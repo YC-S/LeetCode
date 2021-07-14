@@ -2,12 +2,12 @@ package book.epi_java.chapter4;
 
 public class CountBits {
   public static int countBits(int x) {
-    short count = 0;
-    while (x != 0) {
-      count += (x & 1);
-      x >>>= 1;
-    }
-    return count;
+    x ^= x >>> 32;
+    x ^= x >>> 16;
+    x ^= x >>> 8;
+    x ^= x >>> 4;
+    x ^= x >>> 2;
+    return (short) (x ^= (0x1));
   }
 
   public static void main(String[] args) {
