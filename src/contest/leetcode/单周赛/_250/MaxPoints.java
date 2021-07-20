@@ -2,45 +2,24 @@ package contest.leetcode.单周赛._250;
 
 public class MaxPoints {
   public static long maxPoints(int[][] points) {
-    int res = 0;
-    int[] col = new int[points.length];
-    int[] dp = new int[points.length];
-    int max = points[0][0];
-    int col1 = 0;
-    for (int i = 1; i < points[0].length; i++) {
-      if (points[0][i] > max) {
-        max = points[0][i];
-        col1 = i;
-      } else if (points[0][i] == max) {
-        int j = 1;
-        while (j < points.length) {
-          if (points[j][i] > points[j][col1]) {
-            col1 = i;
-            break;
-          } else if (points[j][col1] > points[j][i]) {
-            break;
-          }
-          j++;
-        }
+    long ans = 0;
+    int m = points.length, n = points[0].length;
+    long[] dp = new long[n];
+    for (int i = 0; i < m; i++) {
+      for (int j = 0; j < n; j++) {
+        dp[j] += points[i][j];
+      }
+      for (int j = 1; j < n; j++) {
+        dp[j] = Math.max(dp[j], dp[j - 1] - 1);
+      }
+      for (int j = n - 2; j >= 0; j--) {
+        dp[j] = Math.max(dp[j], dp[j + 1] - 1);
       }
     }
-    dp[0] = max;
-    col[0] = col1;
-    res += max;
-
-    for (int i = 1; i < points.length; i++) {
-      int curMax = points[i][0] - Math.abs(0 - col[i - 1]);
-      int curCol = 0;
-      for (int j = 1; j < points[0].length; j++) {
-        if (points[i][j] - Math.abs(j - col[i - 1]) > curMax) {
-          curMax = points[i][j] - Math.abs(j - col[i - 1]);
-          curCol = j;
-        }
-      }
-      res += curMax;
-      col[i] = curCol;
+    for (int i = 0; i < n; i++) {
+      ans = Math.max(ans, dp[i]);
     }
-    return res;
+    return ans;
   }
 
   public static void main(String[] args) {
