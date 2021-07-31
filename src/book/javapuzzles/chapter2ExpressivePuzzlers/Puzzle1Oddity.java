@@ -1,4 +1,4 @@
-package book.precise_java.chapter2ExpressivePuzzlers;
+package book.javapuzzles.chapter2ExpressivePuzzlers;
 
 public class Puzzle1Oddity {
   public static boolean isOdd(int i) {

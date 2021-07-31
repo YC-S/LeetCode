@@ -1,4 +1,4 @@
-package book.precise_java.chapter2ExpressivePuzzlers;
+package book.javapuzzles.chapter2ExpressivePuzzlers;
 
 public class Puzzle3LongDivision {
   public static void main(String[] args) {
