@@ -1,4 +1,4 @@
-package leetcode500.sliding_window.plan0;
+package leetcode500.P07_sliding_window.plan0;
 
 public class P643_MaximumAverageSubarrayI {
   public double findMaxAverage(int[] nums, int k) {

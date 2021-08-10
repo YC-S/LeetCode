@@ -1,4 +1,4 @@
-package leetcode500.sliding_window.plan0;
+package leetcode500.P07_sliding_window.plan0;
 
 import java.util.LinkedList;
 import java.util.Queue;
