@@ -1,4 +1,4 @@
-package leetcode500.P11_PriorityQueue.plan1;
+package leetcode500.P11_priorityQueue.plan1;
 
 import java.util.Comparator;
 import java.util.HashMap;
