@@ -2,7 +2,7 @@ package leetcode500.p00_api;
 
 import java.util.Random;
 
-public class PrimitiveTypes {
+public class C1_PrimitiveTypes {
   public static void main(String[] args) {
     // Bitwise parameters
     System.out.println(6 & 4); // 4
