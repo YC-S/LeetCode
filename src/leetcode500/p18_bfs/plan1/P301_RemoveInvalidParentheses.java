@@ -1,4 +1,4 @@
-package leetcode500.p18_bfs;
+package leetcode500.p18_bfs.plan1;
 
 import java.util.ArrayList;
 import java.util.List;

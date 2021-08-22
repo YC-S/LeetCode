@@ -1,4 +1,4 @@
-package leetcode500.p18_bfs;
+package leetcode500.p18_bfs.plan1;
 
 import java.util.ArrayDeque;
 import java.util.HashMap;
