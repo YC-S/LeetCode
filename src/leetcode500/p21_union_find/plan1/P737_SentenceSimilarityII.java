@@ -8,7 +8,7 @@ public class P737_SentenceSimilarityII {
   public boolean areSentencesSimilarTwo(
       String[] words1, String[] words2, List<List<String>> pairs) {
     if (words1.length != words2.length) return false;
-    Map<String, Integer> index = new HashMap();
+    Map<String, Integer> index = new HashMap<>();
     int count = 0;
     DSU dsu = new DSU(2 * pairs.size());
     for (List<String> pair : pairs) {
