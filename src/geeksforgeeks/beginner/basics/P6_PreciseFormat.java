@@ -1,4 +1,4 @@
-package geeksforgeeks.beginner;
+package geeksforgeeks.beginner.basics;
 
 public class P6_PreciseFormat {
   static void printInFormat(float a, float b) {

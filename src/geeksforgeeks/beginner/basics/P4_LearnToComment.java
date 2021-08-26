@@ -1,4 +1,4 @@
-package geeksforgeeks.beginner;
+package geeksforgeeks.beginner.basics;
 
 public class P4_LearnToComment {
   static void comment(int a, int b, int c) {

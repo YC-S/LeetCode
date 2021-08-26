@@ -1,4 +1,4 @@
-package geeksforgeeks.beginner;
+package geeksforgeeks.beginner.basics;
 
 public class P7_LogicalOperators {
   static void logicOp(boolean a, boolean b) {
