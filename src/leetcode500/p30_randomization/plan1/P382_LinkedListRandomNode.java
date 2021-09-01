@@ -2,11 +2,11 @@ package leetcode500.p30_randomization.plan1;
 
 import java.util.Random;
 
-public class P382_LinkedListRandomNOde {
+public class P382_LinkedListRandomNode {
   ListNode head;
   Random random;
 
-  public P382_LinkedListRandomNOde(ListNode head) {
+  public P382_LinkedListRandomNode(ListNode head) {
     this.head = head;
     random = new Random();
   }
