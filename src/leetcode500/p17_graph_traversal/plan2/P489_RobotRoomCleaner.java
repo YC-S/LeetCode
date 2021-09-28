@@ -1,7 +1,5 @@
 package leetcode500.p17_graph_traversal.plan2;
 
-import com.sun.tools.javac.util.Pair;
-
 import java.util.HashSet;
 import java.util.Set;
 
